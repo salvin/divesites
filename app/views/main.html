@@ -1,25 +1,41 @@
-<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
-
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<div class="col-4" ng-repeat="region in vm.regions">
+    <a ng-click="vm.selectRegion(region.name)">{{region.name}}</a>
 </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+<ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom'>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+    <ui-gmap-markers
+            models="vm.sites"
+            idKey="'name'"
+            coords="'geo'"
+            icon="'icon'"
+            labelContent="'name'"
+            click="'onClicked'"
+            doCluster="vm.doClusterRandomMarkers"
+            clusterOptions="vm.clusterOptions">
+    </ui-gmap-markers>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+<!--    <ui-gmap-markers
+            models='{expression}'
+            idKey='{expression}'
+            doRebuildAll="{string or object}"
+
+            doCluster="{string or object}"
+            clusterOptions='{expression}'
+            fit="{string or object}"
+
+            labelContent='{expression}'
+
+            coords="'{string}'"
+            icon="'{string}'"
+            options="'{string}'"
+            labelContent="'{string}'"
+            labelAnchor="'{string}'"
+            labelClass="'{string}'"
+            click="'{string or expression to a function}'"
+
+            events="{expression}"
+            control='{expression}'
+            >
+    </ui-gmap-markers>-->
+</ui-gmap-google-map>
