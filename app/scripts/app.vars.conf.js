@@ -1,8 +1,9 @@
+'use strict';
 var APPCONFIG = (function () {
 
-    var gmapsKey = 'AIzaSyCuut9_d0Z1sO4MSY15IhIIYSbyFNkAJiA';
+    var gmapsKey = 'AIzaSyAeukYK9C4IJFlyRbwfBUafhu6HmDDRBIU'; //localhost:9000
 
     return {
         gmapsKey: gmapsKey
-    }
+    };
 }());

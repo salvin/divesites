@@ -9,10 +9,21 @@
             idKey="'name'"
             coords="'geo'"
             icon="'icon'"
+            options="'options'"
+            click="alert"
             labelContent="'name'"
             click="'onClicked'"
             doCluster="vm.doClusterRandomMarkers"
             clusterOptions="vm.clusterOptions">
+
+        <ui-gmap-windows show="true" closeClick="'closeClick'" ng-cloak>
+            <div>
+                <p>{{name}}</p>
+                <p ng-non-bindable>WG 84 lat:{{ geo.lat }}, lng:{{ geo.lng }}!</p>
+            </div>
+        </ui-gmap-windows>
+
+
     </ui-gmap-markers>
 
 <!--    <ui-gmap-markers
